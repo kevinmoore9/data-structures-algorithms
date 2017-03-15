@@ -1,7 +1,20 @@
 const TreeNode = require('./treeNode');
 
+function bfs(node, targetValue) {
+  if (node.value === targetValue) return node;
 
+  let nodes = [node];
+  while (nodes.length > 0) {
+    let [currentNode] = nodes.splice(0,1);
+    console.log(currentNode.value);
+    if (currentNode.value === targetValue) return currentNode;
 
+    currentNode.children.forEach(child => {
+      nodes.push(child);
+    });
+  }
+  return null;
+}
 
 
 let a = new TreeNode("A");
@@ -22,3 +35,5 @@ b.addChild(e);
 
 c.addChild(f);
 c.addChild(g);
+
+console.log(bfs(a,"G"));
