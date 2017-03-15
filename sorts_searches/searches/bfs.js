@@ -1,1 +1,24 @@
 const TreeNode = require('./treeNode');
+
+
+
+
+
+let a = new TreeNode("A");
+let b = new TreeNode("B");
+let c = new TreeNode("C");
+let d = new TreeNode("D");
+let e = new TreeNode("E");
+let f = new TreeNode("F");
+let g = new TreeNode("G");
+let h = new TreeNode("H");
+
+
+a.addChild(b);
+a.addChild(c);
+
+b.addChild(d);
+b.addChild(e);
+
+c.addChild(f);
+c.addChild(g);

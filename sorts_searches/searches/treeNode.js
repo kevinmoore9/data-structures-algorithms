@@ -14,12 +14,22 @@ TreeNode.prototype.setParent = function(newParent) {
 };
 
 TreeNode.prototype.addChild = function(child) {
-  this.children.push(child);
+  child.setParent(this);
 };
 
 TreeNode.prototype.removeChild = function(child) {
+  child.parent = null;
   const idx = this.children.indexOf(child);
   this.children.splice(idx, 1);
 };
 
 module.exports = TreeNode;
+
+// let a = new TreeNode('A');
+// let b = new TreeNode('B');
+// let c = new TreeNode('C');
+
+// a.setParent(b);
+// a.addChild(c);
+// // a.removeChild(c);
+// console.log(c);
