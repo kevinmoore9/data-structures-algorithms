@@ -65,11 +65,11 @@ class IntSet {
   }
 }
 
-let a = new IntSet;
-a.insert(2);
-a.insert(4);
-a.insert(-22);
-console.log(a.store);
+// let a = new IntSet;
+// a.insert(2);
+// a.insert(4);
+// a.insert(-22);
+// console.log(a.store);
 
 class ResizingIntSet {
   constructor(numBuckets = 20) {
@@ -77,21 +77,53 @@ class ResizingIntSet {
     for (let i=0; i < numBuckets; i++) {
       this.store.push([]);
     }
+    this.count = 0;
   }
 
   insert(num) {
+    this.count += 1;
+    let bucket = Math.abs(num % this.numBuckets());
+    this.store[bucket].push(num);
 
+    if (this.count > this.numBuckets()) this.resize();
   }
 
   remove(num) {
-
+    let bucket = Math.abs(num % this.numBuckets());
+    let idx = this.store[bucket].indexOf(num);
+    this.store[bucket].splice(idx, 1);
+    return num;
   }
 
   include(num) {
-
+    let bucket = Math.abs(num % this.numBuckets());
+    return this.store[bucket].includes(num);
+  }
+  numBuckets() {
+    return this.store.length;
   }
 
   resize() {
-
+    this.count = 0;
+    let old = this.store;
+    const newLength = this.numBuckets() * 2;
+    this.store = [];
+    for (let i=0; i<newLength; i++) {
+      this.store.push([]);
+    }
+    old.forEach(bucket => {
+      bucket.forEach(el => {
+        this.insert(el);
+      });
+    });
   }
 }
+
+let a = new ResizingIntSet(2);
+a.insert(1);
+a.insert(3);
+a.insert(5);
+a.remove(5);
+console.log(a.include(1));
+console.log(a.include(5));
+console.log(a);
