@@ -23,7 +23,7 @@ function bSearch(arr, target) {
 
 // try slice instead of splice
 
-console.log(bSearch([1,2,3], 2)); // 1
+console.log(bSearch([2,3], 2)); // 1
 console.log(bSearch([1,2,3,4], 2)); // 1
 console.log(bSearch([1,2,3,4], 4)); // 3
 console.log(bSearch([1,2,3,4], 1)); // 0
