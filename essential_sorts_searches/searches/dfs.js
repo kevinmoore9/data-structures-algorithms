@@ -5,13 +5,10 @@ function dfs(node, targetValue) {
   if (targetValue === node.value) return node;
   let result = null;
   node.children.forEach(child => {
-    // console.log(child.value);
     result = dfs(child, targetValue);
     if (result) return result;
   });
-  if (result) return result;
-  return null;
-
+  return result;
 }
 
 let a = new TreeNode("A");

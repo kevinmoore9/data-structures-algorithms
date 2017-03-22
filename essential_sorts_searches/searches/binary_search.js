@@ -8,11 +8,9 @@ function bSearch(arr, target) {
   if (target === mid) return midx;
   if (arr.length <= 1) return undefined;
 
-  const left = arr.splice(0, midx);
-  const right = arr.splice(1);
+  const left = arr.slice(0, midx);
+  const right = arr.slice(midx + 1);
 
-  console.log(left);
-  console.log(right);
 
   if (target < mid) {
     return bSearch(left, target);
@@ -23,7 +21,11 @@ function bSearch(arr, target) {
 
 // try slice instead of splice
 
-console.log(bSearch([2,3], 2)); // 1
+console.log(bSearch([2,3], 2)); // 0
 console.log(bSearch([1,2,3,4], 2)); // 1
 console.log(bSearch([1,2,3,4], 4)); // 3
 console.log(bSearch([1,2,3,4], 1)); // 0
+
+// Remember to return undefined because adding to null will return a number
+// undefined will return NaN
+// dont want false positives

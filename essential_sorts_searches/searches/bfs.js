@@ -5,7 +5,7 @@ function bfs(node, targetValue) {
 
   let nodes = [node];
   while (nodes.length > 0) {
-    let [currentNode] = nodes.splice(0,1);
+    let currentNode = nodes.shift();
     console.log(currentNode.value);
     if (currentNode.value === targetValue) return currentNode;
 
