@@ -2,8 +2,6 @@
 // Space complexity: O(n)
 
 
-// maybe not nlog(n) with the pushes and splices...
-// instead could keep a counter of left and right indices to ensure O(n)
 
 
 function merge2(left, right) {
