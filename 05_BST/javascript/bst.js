@@ -12,6 +12,10 @@ class BinarySearchTree {
   }
 
   insert(value) {
+
+  }
+
+  find(value) {
     
   }
 }
