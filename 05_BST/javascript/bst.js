@@ -16,6 +16,10 @@ class BinarySearchTree {
   }
 
   find(value) {
+
+  }
+
+  inOrder() {
     
   }
 }
