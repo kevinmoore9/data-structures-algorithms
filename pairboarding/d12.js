@@ -15,3 +15,10 @@ function nextLargest(node) {
     }
   }
 }
+
+function leftMostNode(node) {
+  while (node.left !== null) {
+    let node = node.left;
+  }
+  return node;
+}
