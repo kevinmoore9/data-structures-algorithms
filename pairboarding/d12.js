@@ -43,3 +43,13 @@ function isBalancedNode (node) {
     return {isBalanced: false, depth: 0};
   }
 }
+
+// 12B
+
+function isBST(node, min = null, max = null) {
+  if node === null return true;
+  if ((min && (min > node.value)) || (max & (max < node.value))) {
+    return false;
+  }
+  return (isBST(node.left, min, node.vale) && isBST(node.right, node.value, max))
+}
