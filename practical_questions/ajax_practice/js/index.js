@@ -4,7 +4,8 @@ var tweets;
 
 $.ajax({
   type: 'GET',
-  url: 'http://localhost:3000/feed',
+  url: 'http://localhost:3000/users/1',
+  dataType: 'jsonp',
   success(data) {
     weather = data;
     console.log("We have your tweets!")

@@ -1,10 +1,17 @@
 
-var data =
+let data =
   $.ajax({
-    url: "/feed",
+    url: "http://localhost:3000/users/1",
     method: "GET",
     dataType: "json",
-    data
+
+    success(data) {
+      console.log(data);
+    },
+    error() {
+      console.error("an error");
+    }
   });
 
-  debugger
+
+// debugger
