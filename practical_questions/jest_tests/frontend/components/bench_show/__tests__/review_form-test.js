@@ -35,6 +35,10 @@ describe('review form container', () => {
       /* your code here */
       expect(reviewBody.props().value).toEqual("");
     });
+
+    test('onChange updates the rating', () => {
+      expect(reviewFormWrapper.root.state()).toEqual({});
+    });
   });
 
 });
