@@ -7,9 +7,10 @@ class HumanPlayer
 
   def move(game, mark)
     ## render boaard -- game
+    game.render_board
 
     loop do
-      puts "Please select a space"
+      puts "#{mark}: Please select a space"
 
       input = gets.chomp
       row, col = input[0].to_i, input[1].to_i

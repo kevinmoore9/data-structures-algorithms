@@ -1,8 +1,10 @@
+require 'byebug'
+
 class Board
   attr_reader :rows
 
   def initialize
-    @rows = Array.new { Array.new(3) }
+    @rows = Array.new(3) { Array.new(3) }
   end
 
   def [](pos)
@@ -11,7 +13,7 @@ class Board
     @rows[row][col]
   end
 
-  def []=(mark, pos)
+  def []=(pos, mark)
     raise "Mark already there" unless self[pos].nil?
     row, col = pos
 
@@ -41,7 +43,7 @@ class Board
   end
 
   def next_mark
-    num_marks(:o) > num_marks(:x) ? :o : :x
+    num_marks(:x) > num_marks(:o) ? :o : :x
   end
 
   def num_marks(symbol)
