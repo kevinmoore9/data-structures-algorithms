@@ -2,6 +2,7 @@ require 'byebug'
 
 require_relative 'board'
 require_relative 'human_player'
+require_relative 'computer_player'
 
 class TicTacToe
   attr_reader :players, :board, :turn
@@ -61,6 +62,6 @@ end
 
 if $PROGRAM_NAME == __FILE__
   player1 = HumanPlayer.new("one")
-  player2 = HumanPlayer.new("two")
+  player2 = ComputerPlayer.new
   TicTacToe.new(player1, player2).play
 end

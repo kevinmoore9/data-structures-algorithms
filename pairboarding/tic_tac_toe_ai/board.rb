@@ -3,8 +3,8 @@ require 'byebug'
 class Board
   attr_reader :rows
 
-  def initialize
-    @rows = Array.new(3) { Array.new(3) }
+  def initialize(rows = Array.new(3) { Array.new(3) })
+    @rows = rows
   end
 
   def [](pos)
@@ -60,7 +60,7 @@ class Board
   def available_moves
     moves = []
     @rows.each_with_index do |row, row_idx|
-      row.each do |mark, col_idx|
+      row.each_with_index do |mark, col_idx|
         moves << [row_idx, col_idx] unless mark
       end
     end
@@ -85,5 +85,10 @@ class Board
   def over?
     !winner.nil? || tied?
   end
+
+  def dup
+   duped_rows = rows.map(&:dup)
+   self.class.new(duped_rows)
+ end
 
 end
