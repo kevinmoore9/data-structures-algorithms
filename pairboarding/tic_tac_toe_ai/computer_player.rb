@@ -1,7 +1,7 @@
 class ComputerPlayer
   attr_reader :name
 
-  def iniaialize
+  def initialize
     @name = "SuperComputer"
   end
 
