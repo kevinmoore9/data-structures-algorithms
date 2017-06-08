@@ -15,9 +15,18 @@ class TicTacToe
 
   def render_board
     system("clear")
-    ## Todo: improve render
-    @board.rows.each do |row|
-      p row
+    puts "  0   1   2"
+    
+    @board.rows.each_with_index do |row, idx|
+      puts "  ---------" unless idx == 0
+      new_row = row.map do |el|
+        if el.nil?
+          " "
+        else
+          el
+        end
+      end
+      puts "#{idx} " + new_row.join(" | ")
     end
   end
 
