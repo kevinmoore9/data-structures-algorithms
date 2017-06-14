@@ -1,6 +1,5 @@
 // Arrays must be of equal size
 
-
 function getMedian(arr1, arr2) {
   let m1 = median(arr1);
   let m2 = median(arr2);
@@ -30,6 +29,13 @@ function getMedian(arr1, arr2) {
       return getMedian(arr2.slice(Math.floor(arr1.length / 2) + 1), arr1.slice(0, Math.floor(arr2.length / 2)));
     }
   }
+}
+
+// not equal size
+
+function getMedian2(arr1, arr2) {
+  
+
 }
 
 function median(arr) {    // Time: O(1)
