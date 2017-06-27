@@ -45,7 +45,7 @@ end
 
 def spiral(n)
   row, col = 0, 0
-  last_row, last_col = n, n
+  last_row, last_col = n - 1, n - 1
 
   while row <= last_row && col <= last_col
 
@@ -55,7 +55,7 @@ def spiral(n)
     row += 1
 
     row.upto(last_row) do |i|
-      print "#{i * 5 + col + 1} "
+      print "#{i * 5 + last_col + 1} "
     end
     last_col -= 1
 
@@ -64,12 +64,13 @@ def spiral(n)
     end
     last_row -= 1
 
-    last_row.upto(row) do |i|
-      print "#{i * 5 + last_col + 1} "
+    last_row.downto(row) do |i|
+      print "#{i * 5 + col + 1} "
     end
 
     col += 1
   end
+  puts ""
 end
 spiral_matrix(5)
 spiral(5)
