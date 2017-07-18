@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Custom click handler -->
+  <script>
+    window.myHandler = function() {
+      console.log('cool fact about kevin');
+    };
+  </script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    /* YOUR CODE HERE */
+    // $(function() {
+    //   $('#myDiv').click(myHandler);
+    // });
+    //
+    // window.requestAnimationFrame(() => {
+    //   $('#myDiv').text('New Text');
+    // });
+    document.addEventListener('DOMContentLoaded', () => {
+      let element = document.getElementById('myDiv');
+      element.addEventListener("click", () => {
+        console.log("only one time!");
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <!-- <script src="https://slow.com/takes-2-seconds-to-load.js"></script> -->
+  <div id="myDiv">OMG Click me!</div>
+  <script>
+    // $('#myDiv').click(myHandler);
+    // $(function() {
+    //   $('#myDiv').css({'color':'red', 'border':'1px solid blue'})
+    //              .text('new text!');
+    //
+    //
+    //   $('#myDiv').click(function() {
+    //     $(this).attr('title', 'new title');
+    //     $(this).width('100px');
+    //   });
+    //
+    //   // combine title and text ? if ignoring click
+    //
+    //   // $('#myDiv').click();
+    // });
+  </script>
+</body>
+</html>
+
+
+<!-- Question 1:
+do with and without jquery !!!
+
+  $(function() {
+    $('#myDiv').one("click", myHandler);
+  });
+ -->
+
+<!-- Question 2:
+do with and without jquery !!!
+
+  $(function() {
+    $('#myDiv').click(myHandler);
+  });
+ -->
+
+<!--
+ Question 3:
+ window.requestAnimationFrame(() => {
+   $('#myDiv').text('New Text');
+ }); -->
