@@ -12,16 +12,16 @@
   <script>
     /* YOUR CODE HERE */
     // $(function() {
-    //   $('#myDiv').click(myHandler);
+    //   $('#myDiv').click(() => {
+    //     console.log("math/stats major turned self-taught SWE");
+    //   });
     // });
-    //
-    // window.requestAnimationFrame(() => {
-    //   $('#myDiv').text('New Text');
-    // });
+
+
     document.addEventListener('DOMContentLoaded', () => {
       let element = document.getElementById('myDiv');
       element.addEventListener("click", () => {
-        console.log("only one time!");
+        console.log("you just got clicked!");
       });
     });
 
@@ -32,20 +32,8 @@
   <div id="myDiv">OMG Click me!</div>
   <script>
     // $('#myDiv').click(myHandler);
-    // $(function() {
-    //   $('#myDiv').css({'color':'red', 'border':'1px solid blue'})
-    //              .text('new text!');
-    //
-    //
-    //   $('#myDiv').click(function() {
-    //     $(this).attr('title', 'new title');
-    //     $(this).width('100px');
-    //   });
-    //
-    //   // combine title and text ? if ignoring click
-    //
-    //   // $('#myDiv').click();
-    // });
+
+
   </script>
 </body>
 </html>
@@ -66,9 +54,3 @@ do with and without jquery !!!
     $('#myDiv').click(myHandler);
   });
  -->
-
-<!--
- Question 3:
- window.requestAnimationFrame(() => {
-   $('#myDiv').text('New Text');
- }); -->
